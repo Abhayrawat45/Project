@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Circle</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
+    header { background:#333; color:#fff; padding:10px; text-align:center; }
+    nav { display:flex; justify-content:center; gap:20px; background:#444; padding:10px; }
+    nav a { color:#fff; text-decoration:none; font-weight:bold; }
+    nav a:hover { text-decoration:underline; }
+    #content { padding:20px; max-width:600px; margin:auto; }
+    .post { background:#fff; padding:15px; margin:10px 0; border-radius:8px; box-shadow:0 0 5px #aaa; }
+    .post h3 { margin:0; color:#333; }
+    .post p { margin-top:5px; }
+    button { padding:8px 12px; margin-top:10px; cursor:pointer; }
+    #loginForm { text-align:center; margin-top:50px; }
+    input[type="text"], textarea {
+      width: 90%; padding: 8px; margin: 5px 0;
+      border: 1px solid #aaa; border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Social Circle</h1>
+</header>
+<nav>
+  <a href="#" onclick="showPage('feed')">Home</a>
+  <a href="#" onclick="showPage('profile')">Profile</a>
+  <a href="#" onclick="showPage('create')">Create Post</a>
+</nav>
+
+<div id="content">
+  <!-- Login -->
+  <div id="loginPage">
+    <h2>Welcome to Social Circle</h2>
+    <p>Enter your name to continue:</p>
+    <input type="text" id="username" placeholder="Your name">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Feed Page -->
+  <div id="feedPage" style="display:none;">
+    <h2>Feed</h2>
+    <div id="feed"></div>
+  </div>
+
+  <!-- Profile Page -->
+  <div id="profilePage" style="display:none;">
+    <h2>Your Profile</h2>
+    <p><strong>Name:</strong> <span id="profileName"></span></p>
+  </div>
+
+  <!-- Create Post Page -->
+  <div id="createPage" style="display:none;">
+    <h2>Create Post</h2>
+    <textarea id="postContent" placeholder="What's on your mind?"></textarea><br>
+    <button onclick="createPost()">Post</button>
+  </div>
+</div>
+
+<script>
+  let user = localStorage.getItem('user');
+  let posts = JSON.parse(localStorage.getItem('posts')) || [];
+
+  // Show correct page
+  function showPage(page) {
+    document.getElementById('feedPage').style.display = 'none';
+    document.getElementById('profilePage').style.display = 'none';
+    document.getElementById('createPage').style.display = 'none';
+    if(page === 'feed') loadFeed();
+    document.getElementById(page+'Page').style.display = 'block';
+  }
+
+  // Login
+  function login() {
+    const name = document.getElementById('username').value;
+    if(!name) return alert("Please enter your name");
+    user = name;
+    localStorage.setItem('user', user);
+    document.getElementById('loginPage').style.display = 'none';
+    showPage('feed');
+    document.getElementById('profileName').innerText = user;
+  }
+
+  // Load Feed
+  function loadFeed() {
+    const feedDiv = document.getElementById('feed');
+    feedDiv.innerHTML = '';
+    posts.forEach(post => {
+      let div = document.createElement('div');
+      div.className = 'post';
+      div.innerHTML = <h3>${post.user}</h3><p>${post.content}</p>;
+      feedDiv.appendChild(div);
+    });
+  }
+
+  // Create Post
+  function createPost() {
+    const content = document.getElementById('postContent').value;
+    if(!content) return alert("Write something first!");
+    posts.push({ user: user, content: content });
+    localStorage.setItem('posts', JSON.stringify(posts));
+    document.getElementById('postContent').value = '';
+    showPage('feed');
+  }
+
+  // Auto login if user exists
+  if(user){
+    document.getElementById('loginPage').style.display = 'none';
+    document.getElementById('profileName').innerText = user;
+    showPage('feed');
+  }
+</script>
+</body>
+</html>
