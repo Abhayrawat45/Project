@@ -1,118 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Circle</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
-    header { background:#333; color:#fff; padding:10px; text-align:center; }
-    nav { display:flex; justify-content:center; gap:20px; background:#444; padding:10px; }
-    nav a { color:#fff; text-decoration:none; font-weight:bold; }
-    nav a:hover { text-decoration:underline; }
-    #content { padding:20px; max-width:600px; margin:auto; }
-    .post { background:#fff; padding:15px; margin:10px 0; border-radius:8px; box-shadow:0 0 5px #aaa; }
-    .post h3 { margin:0; color:#333; }
-    .post p { margin-top:5px; }
-    button { padding:8px 12px; margin-top:10px; cursor:pointer; }
-    #loginForm { text-align:center; margin-top:50px; }
-    input[type="text"], textarea {
-      width: 90%; padding: 8px; margin: 5px 0;
-      border: 1px solid #aaa; border-radius: 5px;
-    }
-  </style>
-</head>
-<body>
-<header>
-  <h1>Social Circle</h1>
-</header>
-<nav>
-  <a href="#" onclick="showPage('feed')">Home</a>
-  <a href="#" onclick="showPage('profile')">Profile</a>
-  <a href="#" onclick="showPage('create')">Create Post</a>
-</nav>
-
-<div id="content">
-  <!-- Login -->
-  <div id="loginPage">
-    <h2>Welcome to Social Circle</h2>
-    <p>Enter your name to continue:</p>
-    <input type="text" id="username" placeholder="Your name">
-    <button onclick="login()">Login</button>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Apple</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Macbook</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Latest
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <img
+      src="https://cdn.printnetwork.com/production/assets/5966561450122033bd4456f8/imageLocker/blog-description/blog/sales_banners.jpg"
+      class="img-fluid"
+      alt="..."
+    /> 
+        </div>
+       
+    </div>
+    
+    <div class="d-flex flex-row mb-3">
+      <div class="p-2">
+        <div class="card mb-3" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="https://m.media-amazon.com/images/I/71v2jVh6nIL._UF1000,1000_QL80_.jpg" class="img-fluid rounded-start" alt="..." />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  The iPhone 15 features a 6.1-inch Super Retina XDR display with the Dynamic Island, an A16 Bionic chip, and a 48MP main camera with 2x telephoto, all housed in an aluminium and colour-infused glass design that is splash, water, and dust resistant. It supports wireless charging, has a USB-C port, and comes in various storage options with iOS 17.  
+                </p>
+                <p class="card-text">
+                  <small class="text-body-secondary"
+                    >Last updated 3 mins ago</small
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-2">
+        <div class="card mb-3" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="https://inventstore.in/wp-content/uploads/2024/07/63.webp" class="img-fluid rounded-start" alt="..." />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Enabled by the new 48MP Fusion camera with second-generation quad-pixel sensor and our powerful A18 Pro chip, iPhone 16 Pro lets you record 4K 120 fps Dolby Vision in video mode or slow motion. And now you can adjust the playback speed after capture in the redesigned Photos app, giving you greater editing capabilities.
+                </p>
+                <p class="card-text">
+                  <small class="text-body-secondary"
+                    >Last updated 3 mins ago</small
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-2">
+        <div class="card mb-3" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="https://iplanet.one/cdn/shop/files/iPhone_16_Pro_Desert_Titanium_PDP_Image_Position_1__en-IN_38a0c11d-1864-457e-a2e2-7333c0480a7b.jpg?v=1727249764 " class="img-fluid rounded-start" alt="..." />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  iPhone 16 Pro Max Review: More Than Just A Fancy New Button ...The iPhone 16 Pro features the A18 Pro chip, a new 48MP "Fusion" camera system with a larger sensor and 5x optical zoom telephoto lens, improved thermal design for sustained performance, a durable titanium design, and support for Wi-Fi 7.
+                </p>
+                <p class="card-text">
+                  <small class="text-body-secondary"
+                    >Last updated 3 mins ago</small
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+  <div class="card-header">
+    Featured
   </div>
-
-  <!-- Feed Page -->
-  <div id="feedPage" style="display:none;">
-    <h2>Feed</h2>
-    <div id="feed"></div>
-  </div>
-
-  <!-- Profile Page -->
-  <div id="profilePage" style="display:none;">
-    <h2>Your Profile</h2>
-    <p><strong>Name:</strong> <span id="profileName"></span></p>
-  </div>
-
-  <!-- Create Post Page -->
-  <div id="createPage" style="display:none;">
-    <h2>Create Post</h2>
-    <textarea id="postContent" placeholder="What's on your mind?"></textarea><br>
-    <button onclick="createPost()">Post</button>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
-
-<script>
-  let user = localStorage.getItem('user');
-  let posts = JSON.parse(localStorage.getItem('posts')) || [];
-
-  // Show correct page
-  function showPage(page) {
-    document.getElementById('feedPage').style.display = 'none';
-    document.getElementById('profilePage').style.display = 'none';
-    document.getElementById('createPage').style.display = 'none';
-    if(page === 'feed') loadFeed();
-    document.getElementById(page+'Page').style.display = 'block';
-  }
-
-  // Login
-  function login() {
-    const name = document.getElementById('username').value;
-    if(!name) return alert("Please enter your name");
-    user = name;
-    localStorage.setItem('user', user);
-    document.getElementById('loginPage').style.display = 'none';
-    showPage('feed');
-    document.getElementById('profileName').innerText = user;
-  }
-
-  // Load Feed
-  function loadFeed() {
-    const feedDiv = document.getElementById('feed');
-    feedDiv.innerHTML = '';
-    posts.forEach(post => {
-      let div = document.createElement('div');
-      div.className = 'post';
-      div.innerHTML = <h3>${post.user}</h3><p>${post.content}</p>;
-      feedDiv.appendChild(div);
-    });
-  }
-
-  // Create Post
-  function createPost() {
-    const content = document.getElementById('postContent').value;
-    if(!content) return alert("Write something first!");
-    posts.push({ user: user, content: content });
-    localStorage.setItem('posts', JSON.stringify(posts));
-    document.getElementById('postContent').value = '';
-    showPage('feed');
-  }
-
-  // Auto login if user exists
-  if(user){
-    document.getElementById('loginPage').style.display = 'none';
-    document.getElementById('profileName').innerText = user;
-    showPage('feed');
-  }
-</script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
